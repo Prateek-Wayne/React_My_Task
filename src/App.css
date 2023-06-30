@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&display=swap');
+.App{
+  width:100 vw;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  background-color: rgb(189, 155, 221);
+  font-family: "Agdasima",cursive ;
+}
+.heading{
+  text-transform:uppercase;
+  font-size:40 px;
+  margin:30px 0;
+  color:rgb(255, 255, 255);
+  z-index:1;
+  text-align:center;
+}
