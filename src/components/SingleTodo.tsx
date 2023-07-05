@@ -24,10 +24,15 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
   //.........editing
   const handleEdit = (id: number) => {
     let a = prompt("Edit Input");
-    let name = "temp";
+    // let name = "temp";
+    let name = todo.todo;
     {
       if (a != null) {
-        name = a;
+        if(a==="")
+          name = todo.todo;
+        else{
+          name=a;
+        }
       }
     }
     setTodos(
