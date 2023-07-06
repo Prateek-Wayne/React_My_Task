@@ -1,0 +1,45 @@
+# Triggers /these are triggers /
+on:
+  push:
+    branches:
+      -master
+
+# Jobs /these are functons/
+
+jobs:
+  #Build
+  #runs-on to specify the type of runner that will process the job, such #as ubuntu-latest, windows-latest, or macos-latest
+  build :
+    name : Build
+    runs-on : ubuntu-latest
+    # Steps:array of Tasks to perform in jobs(function)
+    steps:
+      - name : Checkout Code
+        uses : actions/checkout@v2
+      
+
+      - name : install Node version
+        uses : actions/setup-node@v1
+        with :
+          node-version: 16.x
+      - name : Install npm Dependencies #Eg(React icon ,React Dom etc....)
+        run : npm install
+      - name : Building Project 
+        run : npm run build
+      - name : Upload Artifact (Helps in deployement)  # Created Dist folder 
+        uses : actions/upload-artifact@v2
+        with :
+          name : production-files
+          path : ./dist
+    
+  deploy :
+    name : deploy
+    runs-on : ubuntu-latest
+    needs : build
+    
+    steps :
+      - name : Download Artifact
+        uses : actions/download-artifact@v2
+        with :
+          name : production-files
+          path : ./dist
