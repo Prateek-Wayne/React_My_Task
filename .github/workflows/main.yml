@@ -24,20 +24,20 @@ jobs:
         run : npm install
       - name : Building Project 
         run : npm run build
-      - name : Upload Artifact (Helps in deployement)  # Created Dist folder 
-        uses : actions/upload-artifact@v2
-        with :
-          name : production-files
-          path : ./dist
+#       - name : Upload Artifact (Helps in deployement)  # Created Dist folder 
+#         uses : actions/upload-artifact@v2
+#         with :
+#           name : production-files
+#           path : ./dist
     
-  deploy :
-    name : deploy
-    runs-on : ubuntu-latest
-    needs : build
+#   deploy :
+#     name : deploy
+#     runs-on : ubuntu-latest
+#     needs : build
     
-    steps :
-      - name : Download Artifact
-        uses : actions/download-artifact@v2
-        with :
-          name : production-files
-          path : ./dist
+#     steps :
+#       - name : Download Artifact
+#         uses : actions/download-artifact@v2
+#         with :
+#           name : production-files
+#           path : ./dist
