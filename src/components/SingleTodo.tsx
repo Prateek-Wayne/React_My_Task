@@ -26,7 +26,7 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
     let a = prompt("Edit Input");
     // let name = "temp";
     let name = todo.todo;
-    {
+    
       if (a != null) {
         if(a==="")
           name = todo.todo;
@@ -34,7 +34,7 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
           name=a;
         }
       }
-    }
+    
     setTodos(
       todos.map((todo) => (todo.id === id ? { ...todo, todo: name } : todo))
     );
