@@ -1,9 +1,7 @@
 # Triggers /these are triggers /
 name : workflow 1
 on:
-  push:
-    branches:
-      -master
+  push
 
 # Jobs /these are functons/
 
