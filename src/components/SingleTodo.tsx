@@ -21,6 +21,7 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
       )
     );
   };
+  
   //.........editing
   const handleEdit = (id: number) => {
     let a = prompt("Edit Input");
